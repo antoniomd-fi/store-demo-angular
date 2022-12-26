@@ -1,0 +1,26 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(rgba(5,7,12,0.55), rgba(5,7,12,0.55)), url(../assets/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    font-size: 8rem;
+    color: rgb(170, 144, 112);
+}
+
+.buttons{
+    display: flex;
+    width: 290px;
+    justify-content: space-between;
+}
+
+button{
+    height: 60px;
+    font-size: 1.2rem;
+}
