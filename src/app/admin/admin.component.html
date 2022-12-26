@@ -1,1 +1,65 @@
-<p>admin works!</p>
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">STORE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<div class="container">
+  <h1 class="title">Items Administrator</h1>
+
+  <table class="table table-hover" *ngIf="existRegisters(); else withoutArticles">
+    <tr class="table-header">
+      <td>Code</td>
+      <td>Description</td>
+      <td>Price</td>
+      <td>Delete</td>
+      <td>Select</td>
+    </tr>
+    <tr *ngFor="let art of articles">
+      <td>{{art.code}}</td>
+      <td>{{art.description}}</td>
+      <td>{{art.price}}</td>
+      <td><button (click)="delete(art.code)" class="btn btn-outline-danger" >DELETE</button></td>
+      <td><button (click)="select(art)" class="btn btn-outline-info">SELECT</button></td>
+    </tr>
+  </table>
+
+    <ng-template #withoutArticles>
+      <p>The database is empty</p>
+    </ng-template>
+
+    <div class="inputs">
+      <p>
+        Code: <input  class="form-control" type="number" [(ngModel)]="art.code">
+      </p>
+      <p>
+        Description: <input  class="form-control" type="text" [(ngModel)]="art.description">
+      </p>
+      <p>
+        Price: <input  class="form-control" type="number" [(ngModel)]="art.price">
+      </p>
+      <p>
+        <button (click)="add()" class="btn btn-outline-primary">ADD</button>
+        <button (click)="modify()" class="btn btn-outline-secondary">MODIFY</button>
+      </p>
+
+    </div>
+
+    <footer>Todos los derechos reservados. Antonio Martin</footer>
+</div>
